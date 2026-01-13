@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Luxury Bathroom | Майстор за Баня</title>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+	<style>
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		body {
+			font-family: 'Inter', sans-serif;
+			background: #f9f9f9;
+			color: #222;
+			line-height: 1.7;
+		}
+
+		:root {
+			--gold: #c9a24d;
+			--light-card: #ffffff;
+			--shadow: rgba(0,0,0,0.1);
+		}
+
+		header {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			background: rgba(255,255,255,0.95);
+			backdrop-filter: blur(10px);
+			z-index: 1000;
+			border-bottom: 1px solid rgba(0,0,0,0.05);
+		}
+
+		.nav {
+			max-width: 1200px;
+			margin: auto;
+			padding: 20px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.logo {
+			font-family: 'Playfair Display', serif;
+			font-size: 22px;
+			color: var(--gold);
+			letter-spacing: 1px;
+		}
+
+		.nav a {
+			color: #222;
+			text-decoration: none;
+			margin-left: 30px;
+			font-size: 14px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+
+		.nav a:hover { color: var(--gold); }
+
+		.hero {
+			height: 90vh;
+			background: linear-gradient(rgba(249,249,249,0.8), rgba(249,249,249,0.9)), url('hero.jpg') center/cover no-repeat;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			padding: 20px;
+		}
+
+		.hero h1 {
+			font-family: 'Playfair Display', serif;
+			font-size: 52px;
+			max-width: 900px;
+			margin-bottom: 30px;
+		}
+
+		.hero span { color: var(--gold); }
+
+		.hero p {
+			max-width: 600px;
+			margin: auto;
+			font-size: 18px;
+			color: #555;
+		}
+
+		section { padding: 120px 20px; }
+
+		.container { max-width: 1200px; margin: auto; }
+
+		h2 {
+			font-family: 'Playfair Display', serif;
+			font-size: 40px;
+			margin-bottom: 60px;
+			text-align: center;
+		}
+
+		.services {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+			gap: 40px;
+		}
+
+		.service {
+			background: var(--light-card);
+			padding: 50px 40px;
+			border-radius: 24px;
+			border: 1px solid rgba(0,0,0,0.05);
+			transition: transform 0.4s ease, box-shadow 0.4s ease;
+			box-shadow: 0 15px 40px var(--shadow);
+		}
+
+		.service:hover {
+			transform: translateY(-8px);
+			box-shadow: 0 30px 60px var(--shadow);
+		}
+
+		.service h3 {
+			font-family: 'Playfair Display', serif;
+			margin-bottom: 15px;
+			color: var(--gold);
+		}
+
+		.prices table {
+			width: 100%;
+			border-collapse: collapse;
+			background: var(--light-card);
+			border-radius: 24px;
+			overflow: hidden;
+			box-shadow: 0 15px 40px var(--shadow);
+		}
+
+		.prices th, .prices td {
+			padding: 22px;
+			border-bottom: 1px solid rgba(0,0,0,0.05);
+		}
+
+		.prices th {
+			text-align: left;
+			font-weight: 500;
+			color: var(--gold);
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+			gap: 30px;
+		}
+
+		.gallery img {
+			width: 100%;
+			height: 320px;
+			object-fit: cover;
+			border-radius: 28px;
+			filter: grayscale(10%);
+			transition: transform 0.5s ease, filter 0.5s ease;
+		}
+
+		.gallery img:hover {
+			transform: scale(1.05);
+			filter: grayscale(0%);
+		}
+
+		.video-container {
+			position: relative;
+			padding-bottom: 56.25%;
+			height: 0;
+			overflow: hidden;
+			max-width: 100%;
+			border-radius: 28px;
+			box-shadow: 0 15px 40px var(--shadow);
+			margin-bottom: 40px;
+		}
+
+		.video-container iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+			border-radius: 28px;
+		}
+
+		.contact {
+			background: var(--light-card);
+			border-radius: 30px;
+			padding: 80px;
+			max-width: 900px;
+			margin: auto;
+			box-shadow: 0 20px 50px var(--shadow);
+		}
+
+		.contact input, .contact textarea {
+			width: 100%;
+			background: transparent;
+			border: 1px solid rgba(0,0,0,0.15);
+			padding: 16px;
+			margin-bottom: 20px;
+			border-radius: 12px;
+			font-size: 15px;
+			color: #222;
+		}
+
+		.contact button {
+			background: var(--gold);
+			color: #000;
+			border: none;
+			padding: 16px 40px;
+			border-radius: 40px;
+			font-size: 14px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+
+		footer {
+			padding: 60px 20px;
+			text-align: center;
+			color: #777;
+			font-size: 14px;
+		}
+
+		@media(max-width:768px){
+			.hero h1 { font-size: 38px; }
+			section { padding: 80px 20px; }
+			.contact { padding: 40px; }
+		}
+	</style>
+</head>
+<body>
+
+<header>
+	<div class="nav">
+		<div class="logo">Luxury Bathroom</div>
+		<div>
+			<a href="#home">Начало</a>
+			<a href="#services">Услуги</a>
+			<a href="#prices">Цени</a>
+			<a href="#gallery">Галерия</a>
+			<a href="#video">Видео</a>
+			<a href="#contact">Контакт</a>
+		</div>
+	</div>
+</header>
+
+<section class="hero" id="home" style="position: relative; height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; overflow: hidden; background: linear-gradient(rgba(249,249,249,0.6), rgba(249,249,249,0.9)), url('img_0.png') center/cover no-repeat;">
+
+	<div style="position: relative; z-index: 2; max-width: 900px;">
+		<h1 style="font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 20px;">
+			Луксозни ремонти на <span style="color: var(--gold);">бани</span> без компромис
+		</h1>
+		<p style="max-width: 600px; margin: auto; font-size: 18px; color: #555;">
+			Бутикови решения, прецизна изработка и внимание към всеки детайл.
+		</p>
+		<button style="margin-top: 30px; background: var(--gold); color: #000; border: none; padding: 16px 40px; border-radius: 40px; font-size: 16px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px;">Запази оглед</button>
+	</div>
+
+	<!-- Леко текстово размиване на фона, за да запълни визуално -->
+	<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.1); backdrop-filter: blur(4px); z-index: 1;"></div>
+
+</section>
+
+<section id="services">
+	<div class="container">
+		<h2>Услуги</h2>
+		<div class="services">
+			<div class="service"><h3>Дизайнерски бани</h3><p>Индивидуални решения с висок клас материали.</p></div>
+			<div class="service"><h3>Плочки & камък</h3><p>Прецизно редене, фуги без дефекти.</p></div>
+			<div class="service"><h3>ВиК системи</h3><p>Скрит монтаж, надеждност и дълъг живот.</p></div>
+			<div class="service"><h3>Цялостен ремонт</h3><p>От идея до завършен луксозен резултат.</p></div>
+		</div>
+	</div>
+</section>
+
+<section id="gallery">
+	<div class="container">
+		<h2>Проекти</h2>
+		<div class="gallery">
+			<img src="img_0.png">
+			<img src="img_1.png">
+			<img src="img_2.png">
+			<img src="img_1.png">
+		</div>
+	</div>
+</section>
+
+<section id="video" class="container">
+	<h2>Видео проекти</h2>
+	<div class="videos-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+		<div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 28px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
+			<iframe src="https://www.youtube.com/embed/AfL5el5Uc2s" title="YouTube video 1" style="position: absolute; top:0; left:0; width:100%; height:100%; border:0; border-radius:28px;" allowfullscreen></iframe>
+		</div>
+		<div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 28px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
+			<iframe src="https://www.youtube.com/embed/JpiA9HgaqEo" title="YouTube video 2" style="position: absolute; top:0; left:0; width:100%; height:100%; border:0; border-radius:28px;" allowfullscreen></iframe>
+		</div>
+		<div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 28px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
+			<iframe src="https://www.youtube.com/embed/HXCtYWvtL6E" title="YouTube video 3" style="position: absolute; top:0; left:0; width:100%; height:100%; border:0; border-radius:28px;" allowfullscreen></iframe>
+		</div>
+	</div>
+</section>
+
+<section id="prices" class="prices">
+	<div class="container">
+		<h2>Ценообразуване</h2>
+		<table>
+			<tr><th>Услуга</th><th>Цена</th></tr>
+			<tr><td>Редене на плочки</td><td>от 45 лв/кв.м</td></tr>
+			<tr><td>ВиК инсталация</td><td>по договаряне</td></tr>
+			<tr><td>Луксозен ремонт</td><td>след оглед</td></tr>
+		</table>
+	</div>
+</section>
+
+<section id="contact">
+	<div class="contact">
+		<h2>Контакт</h2>
+		<input type="text" placeholder="Вашето име">
+		<input type="email" placeholder="Имейл">
+		<textarea rows="4" placeholder="Проект или запитване"></textarea>
+		<button>Изпрати</button>
+	</div>
+</section>
+
+<footer>
+	© 2026 Luxury Bathroom · Майстор за Баня
+</footer>
+
+</body>
+</html>
